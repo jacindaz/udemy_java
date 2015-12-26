@@ -5,30 +5,25 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int[] myIntegers = getIntegers(5);
-        for(int i = 0; i < myIntegers.length; i++) {
-            System.out.println("Element " + i + ", typed value was " + myIntegers[i]);
-        }
-        System.out.println("The average is " + getAverage(myIntegers));
+        int[] myArray = getIntegers(3);
+        printArray(myArray);
     }
 
-    public static int[] getIntegers(int number) {
-        System.out.println("Enter " + number + " integer values.\r");
-        int[] values = new int[number];
+    // what does the static mean ???
+    public static int[] getIntegers(int numberOfValues) {
+        System.out.println("Enter " + numberOfValues + " number of values:");
 
-        for(int i = 0; i < values.length; i++) {
-            values[i] = scanner.nextInt();
+        int[] myNumbers = new int[numberOfValues];
+        for(int i = 0; i < numberOfValues; i++) {
+            myNumbers[i] = scanner.nextInt();
         }
 
-        return values;
+        return myNumbers;
     }
 
-    public static double getAverage(int[] array) {
-        int sum = 0;
-        for(int i = 0; i < array.length; i++) {
-            sum += array[i];
-        }
-
-        return (double) sum / (double)array.length;
+    public int[] sortIntegers(int[] unsortedArray){
+        // returns sorted version of the unsortedArray
+        int[] someArray = new int[0];
+        return someArray;
     }
 }

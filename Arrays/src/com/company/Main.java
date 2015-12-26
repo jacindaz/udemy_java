@@ -21,6 +21,21 @@ public class Main {
         return myNumbers;
     }
 
+    public static void printArray(int[] array){
+        // print contents of the array
+        for(int i = 0; i < array.length; i++) {
+            if(i == 0) {
+                System.out.print("[" + array[i] + ", ");
+            } else if(i == array.length - 1) {
+                System.out.print(array[i] + "]");
+            } else if(i != array.length) {
+                System.out.print(array[i] + ", ");
+            } else {
+                System.out.print(array[i]);
+            }
+        }
+    }
+
     public int[] sortIntegers(int[] unsortedArray){
         // returns sorted version of the unsortedArray
         int[] someArray = new int[0];

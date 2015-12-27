@@ -50,17 +50,20 @@ public class Main {
 
 //        int[] sortedArray = new int[arrayLength];
         int[] sortedArray = unsortedArray.clone();
+        int numIterations = 0;
 
         // implement using bubble sort, then try quicksort
 
         // Bubble sort
         for(int j = 0; j < arrayLength; j++ ){
+            numIterations += 1;
             for(int i = 0; i < arrayLength; i++) {
+                numIterations += 1;
                 // [3,2,1]
                 // => [2,3,1]
                 // i = 0
 
-                System.out.println("This is the state of the sorted array, at the beginning of the loop: " + printArray(sortedArray));
+//                System.out.println("This is the state of the sorted array, at the beginning of the loop: " + printArray(sortedArray));
 
                 if(i == (arrayLength - 1)) {
                     break;
@@ -69,20 +72,21 @@ public class Main {
                     int secondElement = sortedArray[i + 1];
 
                     if(sortedArray[i] > sortedArray[i + 1]) {
-                        System.out.println("\nQuick sort should swap here: " + sortedArray[i] + "(" + i + ")" + " is greater than " + sortedArray[i + 1] + "(" + (i + 1) + ")");
+//                        System.out.println("\nQuick sort should swap here: " + sortedArray[i] + "(" + i + ")" + " is greater than " + sortedArray[i + 1] + "(" + (i + 1) + ")");
 
                         sortedArray[i] = secondElement;
                         sortedArray[i + 1] = firstElement;
 
-                        System.out.println("This is sorted array: " + printArray(sortedArray) + "\n");
+                        // System.out.println("This is sorted array: " + printArray(sortedArray) + "\n");
                     } else {
                         sortedArray[i] = firstElement;
                         sortedArray[i + 1] = secondElement;
                     }
                 }
             }
-            printArray(sortedArray);
         }
+        System.out.println(printArray(sortedArray));
+        System.out.println("Number of iterations is: " + numIterations);
 
         return sortedArray;
     }

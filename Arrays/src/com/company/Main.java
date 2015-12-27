@@ -21,19 +21,22 @@ public class Main {
         return myNumbers;
     }
 
-    public static void printArray(int[] array){
+    public static String printArray(int[] array){
+        String printedArray = "";
         // print contents of the array
         for(int i = 0; i < array.length; i++) {
             if(i == 0) {
-                System.out.print("[" + array[i] + ", ");
+                printedArray += "\n[" + array[i] + ", ";
             } else if(i == array.length - 1) {
-                System.out.print(array[i] + "]");
+                printedArray += array[i] + "]";
             } else if(i != array.length) {
-                System.out.print(array[i] + ", ");
+                printedArray += array[i] + ", ";
             } else {
-                System.out.print(array[i]);
+                printedArray += array[i] + "\n";
             }
         }
+
+        return printedArray;
     }
 
     public int[] sortIntegers(int[] unsortedArray){

@@ -62,17 +62,23 @@ public class Main {
 
                 System.out.println("This is the state of the sorted array, at the beginning of the loop: " + printArray(sortedArray));
 
-                if(i == arrayLength - 1) {
-                    sortedArray[i] = unsortedArray[i];
-                } else if(unsortedArray[i] > unsortedArray[i + 1]) {
-                    System.out.println("\nQuick sort should swap here: " + unsortedArray[i] + "(" + i + ")" + " is greater than " + unsortedArray[i + 1] + "(" + (i + 1) + ")");
-                    sortedArray[i] = unsortedArray[i + 1];
-                    sortedArray[i + 1] = unsortedArray[i];
-
-                    System.out.println("This is sorted array: " + printArray(sortedArray) + "\n");
+                if(i == (arrayLength - 1)) {
+                    break;
                 } else {
-                    sortedArray[i] = unsortedArray[i];
-                    sortedArray[i + 1] = unsortedArray[i + 1];
+                    int firstElement = sortedArray[i];
+                    int secondElement = sortedArray[i + 1];
+
+                    if(sortedArray[i] > sortedArray[i + 1]) {
+                        System.out.println("\nQuick sort should swap here: " + sortedArray[i] + "(" + i + ")" + " is greater than " + sortedArray[i + 1] + "(" + (i + 1) + ")");
+
+                        sortedArray[i] = secondElement;
+                        sortedArray[i + 1] = firstElement;
+
+                        System.out.println("This is sorted array: " + printArray(sortedArray) + "\n");
+                    } else {
+                        sortedArray[i] = firstElement;
+                        sortedArray[i + 1] = secondElement;
+                    }
                 }
             }
             printArray(sortedArray);

@@ -7,6 +7,8 @@ public class Main {
     public static void main(String[] args) {
         int[] myArray = getIntegers(3);
         printArray(myArray);
+
+        int[] sortedArray = sortIntegers(myArray);
     }
 
     // what does the static mean ???
@@ -39,9 +41,43 @@ public class Main {
         return printedArray;
     }
 
-    public int[] sortIntegers(int[] unsortedArray){
-        // returns sorted version of the unsortedArray
-        int[] someArray = new int[0];
-        return someArray;
+    public static int[] sortIntegers(int[] unsortedArray){
+        int arrayLength = unsortedArray.length;
+
+        // what's the difference between doing .clone()
+        // and just doing arrayCopy = originalArray ???
+//        int[] unsortedArrayCopy = unsortedArray.clone();
+
+//        int[] sortedArray = new int[arrayLength];
+        int[] sortedArray = unsortedArray.clone();
+
+        // implement using bubble sort, then try quicksort
+
+        // Bubble sort
+        for(int j = 0; j < arrayLength; j++ ){
+            for(int i = 0; i < arrayLength; i++) {
+                // [3,2,1]
+                // => [2,3,1]
+                // i = 0
+
+                System.out.println("This is the state of the sorted array, at the beginning of the loop: " + printArray(sortedArray));
+
+                if(i == arrayLength - 1) {
+                    sortedArray[i] = unsortedArray[i];
+                } else if(unsortedArray[i] > unsortedArray[i + 1]) {
+                    System.out.println("\nQuick sort should swap here: " + unsortedArray[i] + "(" + i + ")" + " is greater than " + unsortedArray[i + 1] + "(" + (i + 1) + ")");
+                    sortedArray[i] = unsortedArray[i + 1];
+                    sortedArray[i + 1] = unsortedArray[i];
+
+                    System.out.println("This is sorted array: " + printArray(sortedArray) + "\n");
+                } else {
+                    sortedArray[i] = unsortedArray[i];
+                    sortedArray[i + 1] = unsortedArray[i + 1];
+                }
+            }
+            printArray(sortedArray);
+        }
+
+        return sortedArray;
     }
 }

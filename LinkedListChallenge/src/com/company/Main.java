@@ -63,7 +63,7 @@ public class Main {
                     System.out.println("Reply current song");
                     break;
                 case '5':
-                    System.out.println("List the songs in a playlist\n");
+                    currentPlaylist.printPlaylistSongs();
                     break;
                 case '6':
                     System.out.println("Quitting program");

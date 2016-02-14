@@ -60,6 +60,14 @@ public class Playlist {
         return previousSong;
     }
 
+    public void printPlaylistSongs() {
+        System.out.println("Printing " + this.getName() + "'s songs:");
+
+        for(Song s : this.songs) {
+            System.out.println(s.getTitle());
+        }
+    }
+
     private void printNextIndex(ListIterator<Song> iterator) {
         System.out.println("Next index: " + iterator.nextIndex() + "\n");
     }

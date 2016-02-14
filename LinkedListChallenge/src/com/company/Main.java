@@ -36,6 +36,7 @@ public class Main {
 
     public static void executeMenu(Playlist currentPlaylist) {
         boolean done = false;
+        boolean goingForward = true;
         ListIterator<Song> iterator = currentPlaylist.getSongs().listIterator();
         printMenu();
 
@@ -48,9 +49,14 @@ public class Main {
                     printMenu();
                     break;
                 case '2':
+                    if(goingForward == false) {
+                        iterator.next();
+                    }
                     currentPlaylist.nextSong(iterator);
+                    goingForward = true;
                     break;
                 case '3':
+                    goingForward = false;
                     currentPlaylist.previousSong(iterator);
                     break;
                 case '4':

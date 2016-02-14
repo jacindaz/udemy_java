@@ -23,8 +23,9 @@ public class Playlist {
         // add it to the Playlist songs ArrayList
         if(song.getHasAlbum() == true){
             songs.add(song);
-            System.out.println("Song added to playlist " + this.getName());
+            System.out.println(song.getTitle() + " added to playlist " + this.getName());
         } else {
+            System.out.println("\n");
             System.out.println("Song cannot be added, must be part of an album.");
         }
     }

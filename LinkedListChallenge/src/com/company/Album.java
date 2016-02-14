@@ -12,11 +12,10 @@ public class Album {
     public void addSong(Song song) {
         if(hasSong(song) == false) {
             songs.add(song);
+            song.setHasAlbum(true);
         }
 
-        System.out.println("\n===============");
         System.out.println("Added song with title: " + song.getTitle());
-        System.out.println("===============\n");
     }
 
     public Album() {

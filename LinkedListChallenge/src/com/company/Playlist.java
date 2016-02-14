@@ -7,16 +7,25 @@ import java.util.ArrayList;
  */
 public class Playlist {
     private ArrayList<Song> songs;
+    private String name;
 
-    public Playlist() {
+    public Playlist(String name) {
+        this.name = name;
         this.songs = new ArrayList<Song>();
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void addSong(Song song) {
         // if song already exists in its albums
         // add it to the Playlist songs ArrayList
-//        if(){
-//            songs.add(song);
-//        }
+        if(song.getHasAlbum() == true){
+            songs.add(song);
+            System.out.println("Song added to playlist " + this.getName());
+        } else {
+            System.out.println("Song cannot be added, must be part of an album.");
+        }
     }
 }

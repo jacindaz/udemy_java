@@ -22,7 +22,7 @@ public class Main {
         jacindaFaves.addSong(skinnyLove);
         jacindaFaves.addSong(hello);
 
-        executeMenu();
+        executeMenu(jacindaFaves);
     }
 
     public static void printMenu() {
@@ -34,8 +34,9 @@ public class Main {
         System.out.println("6 - Quit\n");
     }
 
-    public static void executeMenu() {
+    public static void executeMenu(Playlist currentPlaylist) {
         boolean done = false;
+        ListIterator<Song> iterator = currentPlaylist.getSongs().listIterator();
         printMenu();
 
         while(done == false) {
@@ -47,10 +48,10 @@ public class Main {
                     printMenu();
                     break;
                 case '2':
-                    System.out.println("Go to next song");
+                    currentPlaylist.nextSong(iterator);
                     break;
                 case '3':
-                    System.out.println("Go to previous song");
+                    currentPlaylist.previousSong(iterator);
                     break;
                 case '4':
                     System.out.println("Reply current song");
@@ -62,6 +63,11 @@ public class Main {
                     System.out.println("Quitting program");
                     done = true;
             }
+            System.out.println();
         }
+    }
+
+    public static void printNextIndex(ListIterator<Song> iterator) {
+        System.out.println("This is the next index: " + iterator.nextIndex());
     }
 }

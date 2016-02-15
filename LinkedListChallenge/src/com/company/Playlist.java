@@ -68,6 +68,16 @@ public class Playlist {
         }
     }
 
+    public void replayCurrentSong(boolean goingForward, ListIterator<Song> iterator) {
+        if(goingForward == true && iterator.hasPrevious()) {
+            iterator.previous();
+            System.out.println("Current song: " + iterator.next().getTitle());
+        } else {
+            iterator.next();
+            System.out.println("Current song: " + iterator.previous().getTitle());
+        }
+    }
+
     private void printNextIndex(ListIterator<Song> iterator) {
         System.out.println("Next index: " + iterator.nextIndex() + "\n");
     }

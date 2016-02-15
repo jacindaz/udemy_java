@@ -62,16 +62,7 @@ public class Main {
                     printNextIndex(iterator);
                     break;
                 case '4':
-                    System.out.println("Replay current song");
-
-                    if(goingForward == true) {
-                        iterator.previous();
-                        System.out.println("Current song: " + iterator.next().getTitle());
-                    } else {
-                        iterator.next();
-                        System.out.println("Current song: " + iterator.previous().getTitle());
-                    }
-
+                    currentPlaylist.replayCurrentSong(goingForward, iterator);
                     goingForward = false;
                     printNextIndex(iterator);
                     break;

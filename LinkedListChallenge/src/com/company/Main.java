@@ -29,7 +29,7 @@ public class Main {
         System.out.println("\n1 - Print menu");
         System.out.println("2 - Go to next song");
         System.out.println("3 - Go to previous song");
-        System.out.println("4 - Reply current song");
+        System.out.println("4 - Replay current song");
         System.out.println("5 - List the songs in a playlist");
         System.out.println("6 - Quit\n");
     }
@@ -53,14 +53,27 @@ public class Main {
                         iterator.next();
                     }
                     currentPlaylist.nextSong(iterator);
+                    printNextIndex(iterator);
                     goingForward = true;
                     break;
                 case '3':
                     goingForward = false;
                     currentPlaylist.previousSong(iterator);
+                    printNextIndex(iterator);
                     break;
                 case '4':
-                    System.out.println("Reply current song");
+                    System.out.println("Replay current song");
+
+                    if(goingForward == true) {
+                        iterator.previous();
+                        System.out.println("Current song: " + iterator.next().getTitle());
+                    } else {
+                        iterator.next();
+                        System.out.println("Current song: " + iterator.previous().getTitle());
+                    }
+
+                    goingForward = false;
+                    printNextIndex(iterator);
                     break;
                 case '5':
                     currentPlaylist.printPlaylistSongs();

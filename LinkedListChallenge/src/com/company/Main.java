@@ -8,19 +8,15 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Song fire = new Song("Fire", 3);
-        Song skinnyLove = new Song("Skinny Love", 3);
-        Song hello = new Song("Hello", 4);
-
         Album album = new Album();
-        album.addSong(fire);
-        album.addSong(skinnyLove);
-        album.addSong(hello);
+        album.addSong("Fire", 3);
+        album.addSong("Skinny Love", 3);
+        album.addSong("Hello", 5);
 
         Playlist jacindaFaves = new Playlist("Jacinda Faves");
-        jacindaFaves.addSong(fire);
-        jacindaFaves.addSong(skinnyLove);
-        jacindaFaves.addSong(hello);
+        jacindaFaves.addSong("Fire", 3);
+        jacindaFaves.addSong("Skinny Love", 4);
+        jacindaFaves.addSong("Hello", 5);
 
         executeMenu(jacindaFaves);
     }

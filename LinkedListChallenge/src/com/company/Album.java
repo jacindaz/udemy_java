@@ -9,7 +9,8 @@ import java.util.ListIterator;
 public class Album {
     private LinkedList<Song> songs;
 
-    public void addSong(Song song) {
+    public void addSong(String name, int duration) {
+        Song song = new Song(name, duration);
         if(hasSong(song) == false) {
             songs.add(song);
             song.setHasAlbum(true);

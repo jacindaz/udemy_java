@@ -20,9 +20,11 @@ public class Playlist {
     }
     public LinkedList<Song> getSongs() { return songs; }
 
-    public void addSong(Song song) {
+    public void addSong(String name, int duration) {
         // if song already exists in its albums
         // add it to the Playlist songs ArrayList
+        Song song = new Song(name, duration);
+
         if(song.getHasAlbum() == true){
             songs.add(song);
             System.out.println(song.getTitle() + " added to playlist " + this.getName());

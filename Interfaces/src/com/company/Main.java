@@ -4,7 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         Dance someDance = new WestCoastSwing();
-        someDance.playSong("Sorry");
+        Music someMusic = new WestCoastSwing();
+
         someDance.spin(3);
+        someMusic.playSong("Sorry");
     }
 }

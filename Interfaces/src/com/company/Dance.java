@@ -5,5 +5,5 @@ package com.company;
  */
 public interface Dance {
     void spin(int numSpins);
-    void playSong(String songName);
+
 }

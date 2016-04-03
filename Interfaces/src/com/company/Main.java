@@ -13,15 +13,8 @@ public class Main {
 
         someDance.spin(3);
         someDance.playSong("Sorry");
-        printPlaylist(someDance.getPlaylist());
-    }
+        someDance.toString(someDance.getPlaylist());
 
-    public static void printPlaylist(ArrayList<String> list) {
-        System.out.println("\n==========");
-
-        for(String item : list){
-            System.out.println("Song number " +(list.indexOf(item) + 1) + ": "  + item + "");
-        }
-        System.out.println("==========\n");
+        someDance.basic(2);
     }
 }

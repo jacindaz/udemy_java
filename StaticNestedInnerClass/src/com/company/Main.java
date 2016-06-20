@@ -9,5 +9,8 @@ public class Main {
 
         Dance dance = new Dance();
         dance.startDancing();
+        dance.freestyle("flail my arms move");
+
+        dance.startDancing();
     }
 }

@@ -1,6 +1,7 @@
 package com.company;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -9,6 +10,8 @@ import java.util.Random;
 public class Dance {
     private Step danceStep;
     private Spin danceSpin;
+
+    private List<String> testList;
 
     public Dance() {
         this.danceStep = new Step();
@@ -26,6 +29,11 @@ public class Dance {
         danceStep.takeStep();
         danceStep.takeStep();
         danceStep.takeStep();
+        danceStep.takeStep();
+    }
+
+    public void freestyle(String freestyleMove) {
+        Step newStep = new Step();
     }
 
     private class Step {

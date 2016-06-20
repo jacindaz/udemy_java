@@ -6,5 +6,6 @@ public class Main {
         Penguin myPenguin = new Penguin("some penguin");
 
         myPenguin.breathe();
+        myPenguin.fly();
     }
 }

@@ -5,7 +5,8 @@ package com.company;
  */
 public class Penguin extends Bird {
     public Penguin(String name) {
-        super(name);
+        // super(name);
+        this.name = "penguin name";
     }
 
     public void eat() {

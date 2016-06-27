@@ -4,7 +4,7 @@ package com.company;
  * Created by jacindazhong on 6/20/16.
  */
 public abstract class Animal {
-    private String name;
+    public String name;
 
     public Animal(String name) {
         this.name = name;

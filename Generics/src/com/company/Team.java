@@ -15,7 +15,9 @@ import java.util.ArrayList;
 // Here, you can extend a class, and also extend multiple interfaces
 // <T extends Player & Interface1 & Interface2>
 // but remember you can only extend 1 class, but can extend/implement multiple interfaces
-public class Team<T extends Player> {
+public class Team<T extends Player> implements Comparable<Team<T>> {
+    // what is the difference between implements Comparable<Team<T>> and Comparable<Team> ???
+    // public class Team<T extends Player> implements Comparable<Team<T>>
     private String name;
     int played = 0;
     int won = 0;
@@ -59,5 +61,16 @@ public class Team<T extends Player> {
 
     public int ranking() {
         return (won * 2) + tied;
+    }
+
+    @Override
+    public int compareTo(Team<T> team) {
+        if(this.ranking() > team.ranking()) {
+            return -1;
+        } else if(this.ranking() < team.ranking()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

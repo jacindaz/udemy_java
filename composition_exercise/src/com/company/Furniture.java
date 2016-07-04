@@ -4,8 +4,8 @@ package com.company;
  * Created by jacindazhong on 12/17/15.
  */
 public class Furniture {
-    private String name;
-    private String location;
+    public String name;
+    public String location;
 
     public Furniture(String name, String location) {
         this.name = name;

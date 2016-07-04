@@ -8,12 +8,6 @@ public class Printer {
     private Integer numPagesPrinted;
     private Boolean duplexPrinter;
 
-    // WHEN I COME BACK FROM LAUNDRY
-    // CHANGE MY CODE TO BE WHAT THE INSTRUCTOR IS SHOWING IN THE VIDEO
-    //
-    // He adds validations to the constructor, which I did not do
-    // He also adds validations in the addToner() method, which I did not do
-
     public Printer(Integer tonerLevel, Boolean duplexPrinter) {
         if(validateTonerLevel(tonerLevel)) {
             this.tonerLevel = tonerLevel;
